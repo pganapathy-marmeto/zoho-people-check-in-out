@@ -1,0 +1,25 @@
+{
+  "locale": ["en"],
+  "service": "PEOPLE",
+  "whiteListedDomains": ["https://people.zoho.in"],
+  "modules": {
+    "widgets": [
+      {
+        "location": "people.home",
+        "name": "Zoho People Extension",
+        "url": "/app/widget.html",
+        "logo": ""
+      }
+    ]
+  },
+  "config": [],
+  "connectors": [],
+  "cspDomains": {
+    "connect-src": [
+      "https://people.zoho.in",
+      "https://*.zohostatic.com",
+      "https://*.sigmausercontent.com",
+      "https://127.0.0.1:5000"
+    ]
+  }
+}

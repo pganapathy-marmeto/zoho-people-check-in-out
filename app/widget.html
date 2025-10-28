@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MARMETO - Work From Home</title>
+    <style>
+      body.work_from_home_wrapper {
+        font-family: "Inter", sans-serif;
+        background-color: #f5f7fb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      /* Card Style */
+      .modal-content {
+        background-color: #fff;
+        border: none;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        padding: 24px;
+        text-align: center;
+        width: 320px;
+      }
+
+      /* Brand Banner */
+      .brand-header {
+        display: inline-block;
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
+        border-radius: 10px;
+      }
+
+      /* Welcome text */
+      .welcome-text {
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 16px;
+      }
+
+      .credits-exhausted {
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+        margin-top: 16px;
+      }
+
+      /* Status & Credits Sections */
+      .section {
+        background-color: #f8fafc;
+        border-radius: 12px;
+        padding: 12px 16px;
+        margin: 12px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .section-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* Status pill */
+      #statusText {
+        background-color: #f1f5f9;
+        border-radius: 999px;
+        font-size: 12px;
+        padding: 6px 12px;
+        display: inline-block;
+        font-weight: 500;
+      }
+
+      /* Custom colors for statuses */
+      .status-default {
+        background: #fde8e8;
+        color: #b91c1c;
+      }
+      .status-weekend {
+        background: #eee;
+        color: #6b7280;
+      }
+      .status-office {
+        background: #e6fffa;
+        color: #0f766e;
+      }
+      .status-remote {
+        background: #eef2ff;
+        color: #3730a3;
+      }
+      .status-checkedout {
+        background: #fff7ed;
+        color: #9a3412;
+      }
+
+      /* Work From Home Credits */
+      .credits-section {
+        background-color: #f5f3ff;
+        color: #6b21a8;
+      }
+
+      .credit-value {
+        color: #a100ff;
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      /* Button */
+      #checkBtn {
+        background-color: #00001a;
+        color: white;
+        border: none;
+        width: 100%;
+        padding: 12px 0;
+        font-size: 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+
+      #checkBtn:hover {
+        background-color: #111133;
+      }
+
+      /* Remove modal background (making it a card) */
+      .modal {
+        display: block;
+        position: relative;
+        background: none;
+        width: auto;
+        height: auto;
+        overflow: visible;
+      }
+
+      /* Hide unused close button */
+      .close {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body class="work_from_home_wrapper">
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="brand-header">
+          <img
+            width="200"
+            src="https://cdn.shopify.com/s/files/1/0587/1049/1306/files/new-logo-black_1_1.png?v=1752742218"
+            alt="marmeto logo"
+          />
+        </div>
+        <p class="welcome-text"></p>
+
+        <div class="section">
+          <div class="section-label" id="timerDisplay">00:00:00</div>
+          <span id="statusText" class="status-checkedout"></span>
+        </div>
+
+        <div class="section credits-section">
+          <span class="section-label">🏠 Work From Home Credits</span>
+          <span><span class="credit-value"></span> days</span>
+        </div>
+
+        <button id="checkBtn">Check In</button>
+        <span class="credits-exhausted" style="display: none"
+          >Work from home credits Exhausted</span
+        >
+      </div>
+    </div>
+
+    <script src="https://static.zohocdn.com/zp5/widgets/zpwidgetsdk.min.js"></script>
+    <script src="./work_from_home.js"></script>
+  </body>
+</html>
