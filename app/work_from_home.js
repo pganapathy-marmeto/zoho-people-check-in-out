@@ -93,16 +93,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     if (checkBtn.textContent === "Check In") {
       // Check user location before allowing check in
-      const locationAllowed = await checkUserLocation();
-      console.log(locationAllowed);
-      if (locationAllowed === true) {
-        // Resume or start timer
-        startOrResumeTimer();
-        checkBtn.textContent = "Check Out";
-        setStatus("Office-In", "status-office");
-        // Store check-in time
-        await updateCheckInAttendance();
-      } else {
+      // const locationAllowed = await checkUserLocation();
+      // console.log(locationAllowed);
+      // if (locationAllowed === true) {
+      //   // Resume or start timer
+      //   startOrResumeTimer();
+      //   checkBtn.textContent = "Check Out";
+      //   setStatus("Office-In", "status-office");
+      //   // Store check-in time
+      //   await updateCheckInAttendance();
+      // } else {
         // Only decrement WFH credits once per user per day
         if (!hasWFHCreditCheckedToday()) {
           await checkWorkFromHomeCredits();
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         setStatus("Remote-In", "status-remote");
         // Store check-in time
         await updateCheckInAttendance();
-      }
+      // }
       // await updateCheckInAttendance();
     } else {
       // Pause timer
